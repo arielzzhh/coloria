@@ -1,10 +1,12 @@
 import jwt from "jsonwebtoken";
+import dotenv from 'dotenv'
+dotenv.config();
 
 const generateToken = (payload, expDate = "30d") => {
   return new Promise((resolve, reject) => {
     jwt.sign(
       payload,
-      process.env.TOKEN_PRIVATE_KEY,
+      process.env.TOKEN_PRIVATE_KEY, // Include the secret key here
       { expiresIn: expDate },
       (err, token) => {
         if (err) reject(err);

@@ -17,7 +17,7 @@ const registerController = async (req, res) => {
       let newUser = await createUser(req.body);
       newUser.password = undefined;
       delete newUser.password; 
-      res.json(req.body);    //this is the text send in the response no need to change it isent matter
+      res.json(req.body);    //this is the text send in the response  no need to change it isent matter
     } catch (err) {
       console.log('register faild');
       console.log(err);

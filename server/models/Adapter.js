@@ -22,14 +22,13 @@ const AddUser =(user)=>{
 }
 
 
+const FindSelfPoint =(user)=>{
 
-
-
-const getUserEmail =(email)=>{
-  if(Db=="mongo"){
-    return getUserByEmailMongo(email);
+  if (Db === "mongo") {
+    return findAllMyDataPoints(user);
   }
 }
+
 
 
 
